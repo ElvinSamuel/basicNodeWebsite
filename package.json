@@ -1,0 +1,28 @@
+{
+  "name": "simple-website-2016",
+  "version": "1.0.0",
+  "description": "Creating another simple site with Node",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "stylus source/stylesheets/index.styl -o static/css",
+    "watch-css": "stylus source/stylesheets/index.styl -o static/css -w",
+    "clean": "rm -rf static/css && mkdir -p static/css",
+    "build": "npm run clean && npm run build-css",
+    "watch": "npm run clean && npm run watch-css & nodemon index.js -e js, jade",
+    "start": "node server"
+  },
+  "keywords": [
+    "Simple",
+    "Website",
+    "Node"
+  ],
+  "author": "Elvin M. Samuel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4",
+    "jade": "^1.11.0",
+    "morgan": "^1.8.2",
+    "nodemon": "^1.9.2",
+    "stylus": "^0.54.5"
+  }
+}
